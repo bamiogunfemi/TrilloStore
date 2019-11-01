@@ -21,6 +21,7 @@ handleChange= e =>{
     this.setState ({ [name]: value});
 }
 render (){
+    console.log(signInWithGoogle)
     return(
         <div className="sign-in">
             <h2>I already have an account</h2>
@@ -43,12 +44,17 @@ render (){
                   />
                   <div className="buttons">
                 <CustomButton type="submit">SIGN IN</CustomButton>
-                <CustomButton OnClick={signInWithGoogle} isGoogleSignIn>
-                    {' '}
-                    SIGN IN WITH GOOGLE{' '}</CustomButton>
+               
                     </div>
+
                </form>
+               <div className="buttons">
+               <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+                    
+                    SIGN IN WITH GOOGLE</CustomButton>
+                    </div>
         </div>
+        
     )
 }
 }

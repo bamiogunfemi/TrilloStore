@@ -5,7 +5,8 @@ import {Switch, Route} from 'react-router-dom'
 import ShopPage from './pages/shop/shop.component'
 import Header from './components/header/header.component'
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component'
-import {auth} from './firebase/firebase.utils'
+import Cart from './components/cart/cart.component';
+import {auth} from './firebase/firebase.utils';
 
 class App extends React.Component {
   constructor(){
@@ -33,6 +34,7 @@ class App extends React.Component {
    <Route exact path='/' component={HomePage}/>
    <Route exact path='/shop' component={ShopPage}/>
    <Route exact path='/signin' component={SignInAndSignUpPage}/>
+   <Route exact path= '/cart' component= {Cart}/>
    </Switch>
    
       </div>

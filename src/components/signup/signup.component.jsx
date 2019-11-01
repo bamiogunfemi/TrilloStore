@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./singup.style.scss";
+import "./signup.style.scss";
 import FormInput from "../form-input/form-input.component";
-import CustomButton from "..custom-button/custom-button.component";
+import CustomButton from '../../components/custom-button/custom-button.component';
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 
 class SignUp extends Component {
@@ -11,7 +11,7 @@ class SignUp extends Component {
       displayName: "",
       email: "",
       password: "",
-      nconfirmPassword: ""
+      confirmPassword: ""
     };
   }
   handleSubmit = async event => {
@@ -32,7 +32,7 @@ class SignUp extends Component {
         displayName: "",
         email: "",
         password: "",
-        nconfirmPassword: ""
+        confirmPassword: ""
       });
     } catch (error) {
       console.log(error);
@@ -50,7 +50,7 @@ class SignUp extends Component {
         <h2 className="title">I don't have an account</h2>
         <span>Sign up with email and password</span>
         <form className="sign-up-form" onSubmit={this.handleSubmit}>
-          <formInput
+          <FormInput
             type="text"
             name="displayName"
             value={displayName}
@@ -58,7 +58,7 @@ class SignUp extends Component {
             label="Display Name"
             required
           />
-          <formInput
+          <FormInput
             type="email"
             name="email"
             value={email}
@@ -66,7 +66,7 @@ class SignUp extends Component {
             label="Email"
             required
           />
-          <formInput
+          <FormInput
             type="password"
             name="password"
             value={password}
@@ -74,14 +74,15 @@ class SignUp extends Component {
             label="Password"
             required
           />
-          <formInput
+          <FormInput
             type="password"
-            name="password"
+            name="Confirmpassword"
             value={confirmPassword}
             onChange={this.handleChange}
             label="Confirm Password"
             required
           />
+        
           <CustomButton type="submit">Sign Up</CustomButton>
         </form>
       </div>
