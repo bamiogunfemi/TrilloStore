@@ -1,4 +1,4 @@
-const SHOP_DATA = [
+const SHOPnn_DATA = [
     {
       id: 1,
       title: 'Hats',

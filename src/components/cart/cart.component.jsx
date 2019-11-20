@@ -1,14 +1,10 @@
 import React,{Component} from 'react';
 import './cart.style.scss'
 
-class Cart extends Component {
-    constructor(){
-        super();
-        this.state ={
-             name: '',
-             price: ''
+const Cart=()=>(
+     <div className="cartItem">
+         
+     </div>
+)
 
-        }
-    }
-}
 export default Cart;
