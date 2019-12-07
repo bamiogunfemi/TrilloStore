@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const OptionContainerStyles = css`
 cursor: pointer;
 padding: 10px 15px;  
-`
+`;
 
 
 export const HeaderContainer = styled.div`
