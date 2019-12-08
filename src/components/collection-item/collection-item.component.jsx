@@ -5,8 +5,6 @@ import {connect} from 'react-redux'
 import {addItem} from '../../redux/cart/cart.action'
 
 
-
-
 const CollectionItem = ({item, addItem}) => {
    const { name, price,imageUrl}= item;
         return(
