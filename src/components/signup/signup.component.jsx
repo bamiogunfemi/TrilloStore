@@ -37,7 +37,7 @@ class SignUp extends Component {
     } catch (error) {
       console.log(error);
     }
-  };
+  }; 
   handleChange= e =>{
 
     const {name, value} = e.target;
