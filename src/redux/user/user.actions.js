@@ -23,19 +23,29 @@ export const emailSignInStart = emailAndpassword => ({
   payload: emailAndpassword
 });
 
-export const userSession =() =>({
-type:userActionTypes.USER_SESSION
-})
+export const userSession = () => ({
+  type: userActionTypes.USER_SESSION
+});
 
-export const signOutStart =()=>({
+export const signOutStart = () => ({
   type: userActionTypes.SIGN_OUT_START
-})
-export const signOutSuccess =()=>({
+});
+export const signOutSuccess = () => ({
   type: userActionTypes.SIGN_OUT_SUCCESS
-}
-)
-export const signOutFailure =(error)=>({
+});
+export const signOutFailure = error => ({
   type: userActionTypes.SIGN_OUT_FAILURE,
-  payload: error 
-}
-)
+  payload: error
+});
+export const signUpStart = UserCredentials => ({ 
+  type: userActionTypes.SIGN_UP_START,
+  payload: UserCredentials
+});
+export const signUpSuccess = ({ user, additionalData }) => ({
+  type: userActionTypes.SIGN_UP_SUCCESS,
+  payload:{user, additionalData}
+});
+export const signUpFailure = error => ({
+  type: userActionTypes.SIGN_UP_FAILURE,
+  payload:error
+});
