@@ -1,14 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Scope+One&display=swap');
-body{
+
+body {
     font-family: 'Scope One', serif;
-    padding: 20px 60px;
-    
+    padding: 20px 40px;
+
+
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
-*{
-    box-sizing: border-box ;
+
+* {
+    box-sizing: border-box;
+}
+
+@media screen and (max-width:800px) {
+    body {
+        padding: 10px;
+    }
 }
