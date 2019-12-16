@@ -1,5 +1,5 @@
 .collection-item {
-  width: 22vw;
+  width: 44vw;
   display: flex;
   flex-direction: column;
   height: 350px;
@@ -18,7 +18,7 @@
     width: 80%;
     opacity: 0.7;
     position: absolute;
-    top: 205px;
+    top:0;
     display: none;
 
 
@@ -45,7 +45,7 @@
 
       }
 
-     
+
     }
 
   }
