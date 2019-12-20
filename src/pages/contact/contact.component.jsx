@@ -56,8 +56,9 @@ const Contact = ({contactStart}) => {
                        placeholder='message'
                         required
                         rows='20'
-                        cols ='70'
+                        cols ='48'
                     />
+
                     <div>
                         <CustomButton type='submit'> Send </CustomButton>
                     </div>

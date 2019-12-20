@@ -1,11 +1,18 @@
 .contact-page{
   margin: 0 auto;
-  width: 45%;
+  width: 30%;
 
+  @media screen and (max-width:600px) {
+    margin: 0;
+    width: 100%;
+  }
   ::placeholder{
     font-size: large;
     padding: 1rem;
     font-family: 'Scope One', serif;
   }
+}
+textarea{
+  margin: 1rem 0;
 }
 
