@@ -1,5 +1,11 @@
 .contact-page{
   margin: 0 auto;
   width: 45%;
+
+  ::placeholder{
+    font-size: large;
+    padding: 1rem;
+    font-family: 'Scope One', serif;
+  }
 }
 

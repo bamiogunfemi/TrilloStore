@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import './contact.style.scss'
 import { connect } from 'react-redux'
-import { contactStart } from '../../redux/user/user.actions'
+import { contactStart } from '../../redux/contact/contact.actions'
 import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
 
 const Contact = ({contactStart}) => {
     const [userCredentials, setCredentials] = useState({ email: '', password: '', name:'' })
-    const { email, password ,name} = userCredentials;
+    const { email, message ,name} = userCredentials;
 
     const handleSubmit = async e => {
         e.preventDefault();
         
-        contactStart(email, password, name)
+        contactStart(email, message, name)
 
 
     }
@@ -49,9 +49,9 @@ const Contact = ({contactStart}) => {
 
                     <textarea
                     
-                        name="password"
-                        type='password'
-                        value={password}
+                        name="message"
+                        type='message'
+                        value={message}
                         handleChange={handleChange}
                        placeholder='message'
                         required
@@ -72,6 +72,6 @@ const Contact = ({contactStart}) => {
 
 const mapDispatchToProps = dispatch => ({
   
-  contactStart: (email, password, name) => dispatch(contactStart({ email, password, name }))
+  contactStart: (email, message, name) => dispatch(contactStart({ email, message, name }))
 })
 export default connect(null, mapDispatchToProps)(Contact);
