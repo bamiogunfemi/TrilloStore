@@ -9,6 +9,8 @@ import { userSession } from "./redux/user/user.actions";
 import Loader from "./components/loader/loader.component";
 import ErrorBoundary from "./components/error-boundary/error-boundary.component";
 
+import Footer from './components/footer/footer.component'
+
 const HomePage = lazy(() => import("./pages/homepage/homepage.component"));
 const ShopPage = lazy(() => import("./pages/shop/shop.component"));
 const SignInAndSignUpPage = lazy(() =>
@@ -16,6 +18,7 @@ const SignInAndSignUpPage = lazy(() =>
 );
 const CheckoutPage = lazy(() => import("./pages/checkout/checkout.component"));
 
+const Contact = lazy(()=> import ('./pages/contact/contact.component'))
 const App = ({ userSession, currentUser }) => {
   useEffect(() => {
     userSession();
@@ -29,6 +32,7 @@ const App = ({ userSession, currentUser }) => {
           <Suspense fallback={<Loader />}>
             <Route exact path="/" component={HomePage} />
             <Route path="/shop" component={ShopPage} />
+            <Route path='/contact' component={Contact}/>
             <Route exact path="/checkout" component={CheckoutPage} />
             <Route
               exact
@@ -40,6 +44,7 @@ const App = ({ userSession, currentUser }) => {
           </Suspense>
         </ErrorBoundary>
       </Switch>
+      <Footer/>
     </div>
   );
 };

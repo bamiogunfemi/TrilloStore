@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import './sign-in.style.scss'
+import './contact.style.scss'
 import { connect } from 'react-redux'
-import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actions'
-import FormInput from '../form-input/form-input.component'
-import CustomButton from '../custom-button/custom-button.component';
+import { contactStart } from '../../redux/user/user.actions'
+import FormInput from '../../components/form-input/form-input.component'
+import CustomButton from '../../components/custom-button/custom-button.component'
 
-
-const SignIn = ({emailSignInStart, googleSignInStart}) => {
-    const [userCredentials, setCredentials] = useState({ email: '', password: '' })
-    const { email, password } = userCredentials;
+const Contact = ({contactStart}) => {
+    const [userCredentials, setCredentials] = useState({ email: '', password: '', name:'' })
+    const { email, password ,name} = userCredentials;
 
     const handleSubmit = async e => {
         e.preventDefault();
         
-        emailSignInStart(email, password)
+        contactStart(email, password, name)
 
 
     }
@@ -23,10 +22,21 @@ const SignIn = ({emailSignInStart, googleSignInStart}) => {
     }
 
         return (
-            <div className="sign-in">
+            <div className="contact-page">
                 <h2>Get in touch with us !</h2>
-                <span>Sign in with your email and password </span>
-                <form onSubmit={handleSubmit} >
+          
+                <form  onSubmit={handleSubmit} >
+                  
+                <FormInput
+                        name="name"
+                        type='name'
+                        value={name}
+                        handleChange={handleChange}
+                        label='name'
+                        required 
+
+                  
+                    />
                     <FormInput
                         name="email"
                         type='email'
@@ -34,33 +44,34 @@ const SignIn = ({emailSignInStart, googleSignInStart}) => {
                         handleChange={handleChange}
                         label='email'
                         required 
+
                     />
 
-                    <FormInput
+                    <textarea
+                    
                         name="password"
                         type='password'
                         value={password}
                         handleChange={handleChange}
-                        label='password'
+                       placeholder='message'
                         required
+                        rows='20'
+                        cols ='70'
                     />
                     <div>
-                        <CustomButton type='submit'> Sign in </CustomButton>
-                        <CustomButton type='button' onClick={googleSignInStart} isGoogleSignIn>
-                            Sign in with Google
-            </CustomButton>
+                        <CustomButton type='submit'> Send </CustomButton>
                     </div>
-
+                    
 
                 </form>
-
+            
             </div>
         )
     }
 
 
 const mapDispatchToProps = dispatch => ({
-    googleSignInStart: () => dispatch(googleSignInStart()),
-    emailSignInStart: (email, password) => dispatch(emailSignInStart({ email, password }))
+  
+  contactStart: (email, password, name) => dispatch(contactStart({ email, password, name }))
 })
-export default connect(null, mapDispatchToProps)(SignIn);
+export default connect(null, mapDispatchToProps)(Contact);
