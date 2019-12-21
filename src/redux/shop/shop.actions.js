@@ -14,9 +14,4 @@ export const fetchCollectionsFailure = errorMessage =>({
   payload: errorMessage
   
 })
-export const fetchCollectionsStartAsync = ()=>{
- return dispatch=>{
 
- 
- }
-}

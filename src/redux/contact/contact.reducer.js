@@ -2,7 +2,8 @@ import ContactActionTypes from './contact.types'
 
 const INITIAL_STATE ={
   error: null,
-  isSending:false
+  isSending:false,
+  contact:{}
 }
 
 const contactReducer = (state = INITIAL_STATE, action)=>{
@@ -11,19 +12,22 @@ const contactReducer = (state = INITIAL_STATE, action)=>{
         return{
           ...state,
           error:null,
-          isSending:true
+          isSending:true,
+         
         }
     case ContactActionTypes.CONTACT_SUCCESS:
     return{
       ...state,
       error:null,
-      isSending:false
+      isSending:false,
+      contact:action.payload
     }
     case ContactActionTypes.CONTACT_FAILURE:
       return{
         ...state,
         error:action.payload,
-        isSending:false
+        isSending:false,
+       
       }
       
   
