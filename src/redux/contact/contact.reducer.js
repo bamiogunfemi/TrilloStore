@@ -1,7 +1,8 @@
 import ContactActionTypes from './contact.types'
 
 const INITIAL_STATE ={
-  error: null,
+  errorMessage: null,
+  successMesage: null,
   isSending:false,
   contact:{}
 }
@@ -11,21 +12,24 @@ const contactReducer = (state = INITIAL_STATE, action)=>{
     case ContactActionTypes.CONTACT_START:
         return{
           ...state,
-          error:null,
+          errorMessage:null,
+          successMesage:null,
           isSending:true,
+          contact:action.payload
          
         }
     case ContactActionTypes.CONTACT_SUCCESS:
     return{
       ...state,
-      error:null,
+      successMesage:action.payload,
+      errorMessage:null,
       isSending:false,
-      contact:action.payload
+     
     }
     case ContactActionTypes.CONTACT_FAILURE:
       return{
         ...state,
-        error:action.payload,
+        errorMessage:action.payload,
         isSending:false,
        
       }

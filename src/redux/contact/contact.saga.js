@@ -1,8 +1,7 @@
-import {takeLatest, put, all, call} from 'redux-saga'
+import {takeLatest, put, all, call} from 'redux-saga/effects'
 import ContactActionTypes from './contact.types'
 import {
   contactFailure,
-  contactStart,
   contactSuccess
 } from './contact.actions'
 
@@ -16,3 +15,13 @@ export function* contact({payload:{email,name,message}}){
     yield put(contactFailure(error))
   }
 }
+export function* contactStart(){
+  yield takeLatest(ContactActionTypes.CONTACT_SUCCESS, contact )
+}
+
+
+export function* contactSaga() {
+  yield all([
+    call(contactStart)])
+}
+
