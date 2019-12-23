@@ -51,7 +51,7 @@ const Contact = ({ contactStart }) => {
                     name="message"
                     type='message'
                     value={message}
-                    handleChange={handleChange}
+                    onChange={handleChange}
                     placeholder='message'
                     required
                     rows='20'
