@@ -11,8 +11,7 @@ const Contact = ({ contactStart }) => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-
-        contactStart(email, message, name)
+         contactStart(email, message, name)
 
 
     }
@@ -71,7 +70,6 @@ const Contact = ({ contactStart }) => {
 
 
 const mapDispatchToProps = dispatch => ({
-
     contactStart: (email, message, name) => dispatch(contactStart({ email, message, name }))
 })
 export default connect(null, mapDispatchToProps)(Contact);
