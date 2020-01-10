@@ -14,6 +14,7 @@ const StripeCheckoutButton = ({ price }) => {
     <StripeCheckout
       label="Pay Now"
       name=' Trillo Stores'
+      image='https://res.cloudinary.com/bamiogunfemi/image/upload/v1578694739/android-icon-36x36_iq4k0o.png'
       billingAddress
       shippingAddress
       description={`Your total is $${price}`}
