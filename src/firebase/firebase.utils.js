@@ -1,6 +1,8 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+
+
 const config = {
   apiKey: "AIzaSyAR2ZETvYbtF13F-nIsb-wbf0zohs6N4YI",
   authDomain: "trillo-db.firebaseapp.com",

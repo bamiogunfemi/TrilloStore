@@ -7,6 +7,7 @@ import CheckoutItem from '../../components/checkout-item/checkout-item'
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component'
 
 
+
 const CheckoutPage = ({ cartItems, total }) => (
   <div className="checkout-page">
     <div className="checkout-header">
@@ -42,9 +43,11 @@ const CheckoutPage = ({ cartItems, total }) => (
   </div>
 )
 
+
 const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
   total: selectCartTotal
 })
+
 
 export default connect(mapStateToProps, null)(CheckoutPage);
