@@ -52,7 +52,7 @@ export const CustomButtonContainer = styled.button`
   padding:0 1rem;
   font-size: 15px;
   text-transform: uppercase;
-  font-weight: bolder;
+  font-weight: bold;
   cursor: pointer;
   display: flex;
   justify-content: center;

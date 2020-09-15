@@ -2,7 +2,6 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
-
 const config = {
   apiKey: "AIzaSyAR2ZETvYbtF13F-nIsb-wbf0zohs6N4YI",
   authDomain: "trillo-db.firebaseapp.com",
@@ -17,9 +16,8 @@ firebase.initializeApp(config);
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
   const userRef = firestore.doc(`users/${userAuth.uid}`);
-  
+
   const snapShot = await userRef.get();
- 
 
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
@@ -78,9 +76,7 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
-googleProvider.setCustomParameters({ prompt: 'select_account' });
+googleProvider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 
 export default firebase;
-
-

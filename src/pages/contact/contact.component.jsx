@@ -11,7 +11,7 @@ const Contact = ({ contactStart }) => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-         contactStart(email, message, name)
+        contactStart(email, message, name)
 
 
     }
@@ -23,8 +23,8 @@ const Contact = ({ contactStart }) => {
     return (
         <div className="contact-page">
             <h2>Get in touch with us !</h2>
+            <form method="post" action="https://formspree.io/xyyerjyb" onSubmit={handleSubmit}>
 
-            <form onSubmit={handleSubmit} >
 
                 <FormInput
                     name="name"
@@ -53,12 +53,11 @@ const Contact = ({ contactStart }) => {
                     onChange={handleChange}
                     placeholder='message'
                     required
-                    rows='20'
-                    cols='48'
                 />
 
+
                 <div>
-                    <CustomButton type='submit'> Send </CustomButton>
+                    <CustomButton type='submit' > Send </CustomButton>
                 </div>
 
 
