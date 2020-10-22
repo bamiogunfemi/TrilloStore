@@ -6,7 +6,7 @@ import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
 
 const Contact = ({ contactStart }) => {
-    const [userCredentials, setCredentials] = useState({ email: '', password: '', name: '' })
+    const [userCredentials, setCredentials] = useState({})
     const { email, message, name } = userCredentials;
 
     const handleSubmit = async e => {
